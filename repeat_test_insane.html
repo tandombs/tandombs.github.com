@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="language" content="english"> 
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+
+<title>T H E B E S T V I D E O O N T H E I N T E R N E T</title>
+
+<style>
+
+{background-color:#000000;}
+
+div.ex
+{
+width:220px;
+height:500px;
+padding:10px;
+border:5px solid white;
+margin:300px;
+background-color:#C0C0C0;
+}
+div.dt
+{
+width:220px;
+height:500px;
+padding:10px;
+border:5px solid white;
+margin:20px;
+background-color:#C0C0C0;
+}
+
+</style>
+<script type="text/javascript">
+
+   var num;
+   var temp=0;
+   var speed=200; /* this is set for 5 seconds, edit value to suit requirements */
+   var preloads=[];
+
+/* add any number of images here */
+
+preload(
+        'ica.gif',
+        'hyetal.gif',
+        'brutality.gif',
+        'cube.gif',
+        'muscle_beach.gif',
+        'addidas_underground.gif','dan_tombs_backgroundtile.gif'
+       );
+
+function preload(){
+
+for(var c=0;c<arguments.length;c++) {
+   preloads[preloads.length]=new Image();
+   preloads[preloads.length-1].src=arguments[c];
+  }
+ }
+
+function rotateImages() {
+   num=Math.floor(Math.random()*preloads.length);
+if(num==temp){
+   rotateImages();
+ }
+else {
+   document.body.style.backgroundImage='url('+preloads[num].src+')';
+   temp=num;
+
+setTimeout(function(){rotateImages()});
+  }
+ }
+
+if(window.addEventListener){
+   window.addEventListener('load',rotateImages,false);
+ }
+else { 
+if(window.attachEvent){
+   window.attachEvent('onload',rotateImages);
+  }
+ }
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>
+
